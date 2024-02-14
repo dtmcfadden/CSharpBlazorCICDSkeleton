@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_9a2f84ad49e04625adbbb1d64bdb74a2 }}/csharpblazorcicdskeleton:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./CSharpBlazorCICDSkeleton.Frontend/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
