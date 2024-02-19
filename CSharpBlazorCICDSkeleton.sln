@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpBlazorCICDSkeleton.Frontend", "CSharpBlazorCICDSkeleton.Frontend\CSharpBlazorCICDSkeleton.Frontend.csproj", "{B4D2676A-364E-4180-92BA-E02F08E7A8A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpBlazorCICDSkeleton.Frontend", "CSharpBlazorCICDSkeleton.Frontend\CSharpBlazorCICDSkeleton.Frontend.csproj", "{B4D2676A-364E-4180-92BA-E02F08E7A8A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpBlazorCICDSkeleton.Frontend.UnitTests", "CSharpBlazorCICDSkeleton.Frontend.UnitTests\CSharpBlazorCICDSkeleton.Frontend.UnitTests.csproj", "{667FC2DC-418D-4E4B-8D4E-E1D1BAE9B730}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpBlazorCICDSkeleton.Frontend.UnitTests", "CSharpBlazorCICDSkeleton.Frontend.UnitTests\CSharpBlazorCICDSkeleton.Frontend.UnitTests.csproj", "{667FC2DC-418D-4E4B-8D4E-E1D1BAE9B730}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2F93F82D-B6AB-4892-90D0-79430123AD72}"
 EndProject
