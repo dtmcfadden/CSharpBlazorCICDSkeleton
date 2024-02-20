@@ -35,22 +35,25 @@ public partial class Chat
 
         if (firstRender)
         {
-            UserInputRef.Element.Value.FocusAsync();
+            UserInputRef!.Element!.Value.FocusAsync();
         }
     }
 
     protected override async Task OnInitializedAsync()
     {
-        hubConnection = new HubConnectionBuilder()
-            .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
-            .Build();
-
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        if (Navigation is not null)
         {
-            AddMessage(user, message);
-        });
+            hubConnection = new HubConnectionBuilder()
+                .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
+                .Build();
 
-        await hubConnection.StartAsync();
+            hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+            {
+                AddMessage(user, message);
+            });
+
+            await hubConnection.StartAsync();
+        }
     }
 
     public void AddMessage(string user, string message)
@@ -67,11 +70,11 @@ public partial class Chat
         {
             sendingMessage = true;
 
-            await hubConnection.SendAsync("SendMessage", UserInputRef.Value, MessageRef.Value);
+            await hubConnection.SendAsync("SendMessage", UserInputRef!.Value, MessageRef!.Value);
 
             ChatModel.Message = "";
 
-            MessageRef.Element.Value.FocusAsync();
+            await MessageRef!.Element!.Value.FocusAsync();
 
             sendingMessage = false;
         }
@@ -79,7 +82,7 @@ public partial class Chat
 
     public bool ValidateForm()
     {
-        return editContext.Validate();
+        return editContext!.Validate();
     }
 
     public async ValueTask DisposeAsync()
